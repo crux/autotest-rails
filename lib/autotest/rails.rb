@@ -76,7 +76,7 @@ class Autotest::Rails < Autotest
     sep = File::SEPARATOR
     f = s.sub(/^test#{sep}((unit|functional|integration|views|controllers|helpers)#{sep})?/, '').sub(/\.rb$/, '').split(sep)
     f = f.map { |path| path.split(/_/).map { |seg| seg.capitalize }.join }
-    f = f.map { |path| path =~ /Test$/ ? path : "#{path}Test"  }
+    #f = f.map { |path| path =~ /Test$/ ? path : "#{path}Test"  }
     f.join('::')
   end
 end
